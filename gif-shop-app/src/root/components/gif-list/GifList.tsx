@@ -1,29 +1,16 @@
-import  { useSelector }  from  'react-redux';
+import { useSelector } from "react-redux";
+import Image from "next/image";
+import { selectGifs } from "@/root/redux/reducers/gif-reducer/gifReducer";
+import { Gif } from "@/root/types/Gif.type";
 
-import  { selectGifs }  from  '../reducers/gifReducer';
+export const GifList = () => {
+  const gifList = useSelector(selectGifs);
 
-import  { Gif }  from  '../types/gif';
-
-  
-
-export  const  GifList  =  ()  =>  {
-
-const  gifs  =  useSelector(selectGifs);
-
-  
-
-return (
-
-<div>
-
-{gifs.map((gif:  Gif) => (
-
-<img  key={gif.id} src={gif.url} alt={gif.title} />
-
-))}
-
-</div>
-
-);
-
+  return (
+    <div>
+      {gifList.map((gif: Gif) => (
+        <Image key={gif.id} src={gif.url} alt={gif.title} />
+      ))}
+    </div>
+  );
 };

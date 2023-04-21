@@ -1,11 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-import { AppDispatch, RootState } from "../../store";
-
-import { Gif } from "../types/gif";
-
-import { fetchGifs } from "../api/giphy";
-
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
+import { Gif } from "@/root/types/Gif.type";
+ 
 interface GifState {
   gifs: Gif[];
 }
@@ -28,13 +24,6 @@ export const gifSlice = createSlice({
 
 export const { setGifs } = gifSlice.actions;
 
-export const fetchGifsAsync = (searchTerm: string) => {
-  return async (dispatch: AppDispatch) => {
-    const gifs = await fetchGifs(searchTerm);
-
-    dispatch(setGifs(gifs));
-  };
-};
 
 export const selectGifs = (state: RootState) => state.gif.gifs;
 

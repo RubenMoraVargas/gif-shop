@@ -1,45 +1,25 @@
-import  { useDispatch }  from  'react-redux';
+import { useDispatch } from "react-redux";
 
-import  { removeCartItem }  from  '../reducers/cartReducer';
-
-import  { CartItem  as  CartItemType }  from  '../types/cartItem';
-
-  
+import { CartItem as CartItemType } from "@/root/types/CartItem.type";
+import { removeItem } from '@/root/redux/reducers/cart-reducer/cartReducer';
 
 interface CartItemProps {
-
-item: CartItemType;
-
+  item: CartItemType;
 }
 
-  
+export const CartItem = ({ item }: CartItemProps) => {
+  const dispatch = useDispatch();
 
-export  const  CartItem  =  ({  item  }: CartItemProps)  =>  {
+  const handleRemove = () => {
+    dispatch(removeItem(item.id));
+  };
 
-const  dispatch  =  useDispatch();
-
-  
-
-const  handleRemove  = () => {
-
-dispatch(removeCartItem(item.id));
-
-};
-
-  
-
-return (
-
-<div>
-
-<p>{item.name}</p>
-
-<p>{item.price}</p>
-
-<button  onClick={handleRemove}>Remove</button>
-
-</div>
-
-);
-
-};
+  return (
+    <div>
+      <p>{item.name}</p>
+      <p>{item.price}</p>
+      <button onClick={handleRemove}>Remove</button>
+    </div>
+  );
+}; 
+export default CartItem ;

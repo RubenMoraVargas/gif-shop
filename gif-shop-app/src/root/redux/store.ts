@@ -1,14 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
-import thunkMiddleware from "redux-thunk";
-import { gifReducer } from "./reducers/gif-reducer/gifReducer";
+import { configureStore } from "@reduxjs/toolkit"; 
+import { TypedUseSelectorHook, useSelector } from 'react-redux'
 
-export const store = configureStore({
+import { gifReducer } from "./reducers/gif-reducer/gifReducer";
+import { cartReducer } from './reducers/cart-reducer/cartReducer';
+
+export const ApplicationStore = configureStore({
   reducer: {
     gif: gifReducer,
-  },
-
-  middleware: [thunkMiddleware],
+    cart: cartReducer,
+  }, 
 });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof ApplicationStore.getState>;
+export default ApplicationStore;
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector

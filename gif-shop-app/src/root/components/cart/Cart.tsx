@@ -1,8 +1,12 @@
-import { useSelector } from 'react-redux';
-import { selectCartItems, selectCartTotal } from '../reducers/cartReducer';
-import { CartItem } from '../components/CartItem';
+import { useSelector } from "react-redux";
 
-const Cart = () => {
+import { CartItem } from "@/root/components/cart-item/CartItem";
+import { CartItem as CartItemType } from "@/root/types/CartItem.type";
+import {
+  selectCartItems,
+  selectCartTotal,
+} from "@/root/redux/selectors/cart-selector/cart.selector";
+export const Cart = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
 
@@ -10,7 +14,7 @@ const Cart = () => {
     <div className="container">
       <h1>Cart</h1>
       <div className="cart-items">
-        {cartItems.map((item) => (
+        {cartItems.map((item: CartItemType) => (
           <CartItem key={item.id} item={item} />
         ))}
       </div>
@@ -21,5 +25,4 @@ const Cart = () => {
     </div>
   );
 };
-
 export default Cart;

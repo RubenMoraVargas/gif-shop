@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { selectCartItems } from '../reducers/cartReducer';
-import { Cart } from './Cart';
 import Link from 'next/link';
+import Cart from '../cart/Cart';
+import { selectCartItems } from '@/root/redux/selectors/cart-selector/cart.selector';
 
 export const CartMenu = () => {
   const cartItems = useSelector(selectCartItems);

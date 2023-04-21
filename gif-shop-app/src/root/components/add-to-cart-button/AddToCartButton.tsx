@@ -1,35 +1,18 @@
-import  { useDispatch }  from  'react-redux';
+import { useDispatch } from "react-redux";
 
-import  { addItem }  from  '../reducers/cartReducer';
-
-import  { Item }  from  '../types/item';
-
-  
+import { addItem } from "@/root/redux/reducers/cart-reducer/cartReducer";
+import { Item } from "@/root/types/Item.type";
 
 interface AddToCartButtonProps {
-
-item: Item;
-
+  item: Item;
 }
 
-  
+export const AddToCartButton = ({ item }: AddToCartButtonProps) => {
+  const dispatch = useDispatch();
 
-export  const  AddToCartButton  =  ({  item  }: AddToCartButtonProps)  =>  {
+  const handleAddToCart = () => {
+    dispatch(addItem({ ...item, quantity: 1 }));
+  };
 
-const  dispatch  =  useDispatch();
-
-  
-
-const  handleAddToCart  = () => {
-
-dispatch(addItem({ id:  item.id,  name:  item.name,  price:  item.price }));
-
+  return <button onClick={handleAddToCart}>Add to cart</button>;
 };
-
-  
-
-return <button  onClick={handleAddToCart}>Add  to  cart</button>;
-
-};
-
-  
