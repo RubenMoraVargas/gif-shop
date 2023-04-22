@@ -13,7 +13,7 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSearch} className="my-8">
+    <form onSubmit={handleSearch} className="my-8 w-3/4 ">
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"

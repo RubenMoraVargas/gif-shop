@@ -19,14 +19,20 @@ console.log(gifs);
   }, [dispatch]);
 
   return (
-    <div className="container"> 
-      <h1 className="text-center font-bold text-4xl my-12">Gif Market</h1>
+    <div className="dark:bg-slate-800 "> 
+      <h1 className="text-center dark:text-white  font-bold text-4xl py-12">Gif Market</h1>
+      <div className="flex justify-center">
       <SearchBar/>
-      <div className="grid grid-cols-3 gap-4">
+
+      </div>
+      <div className="flex justify-center"> 
+      <div className="grid grid-cols-3 gap-4 justify-center">
         {gifs.map((gif: Gif) => (
           <GifItem key={gif.id} title={gif.title} gifImageUrl={gif.url} price={ promotionPrice} />
              
         ))}
+      </div>
+      
       </div>
     </div>
   );
