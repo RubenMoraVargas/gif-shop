@@ -6,10 +6,13 @@ function SearchBar() {
 
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const searchTerm = event.currentTarget.searchTerm.value.trim();
-    if (searchTerm) {
-      dispatch(startSetGif(searchTerm));
+    let searchTerm = event.currentTarget.searchTerm.value.trim();
+    if (!searchTerm) {
+      searchTerm="dogs";
     }
+    console.log(searchTerm);
+    
+    dispatch(startSetGif(searchTerm));
   };
 
   return (
@@ -48,7 +51,7 @@ function SearchBar() {
         />
         <button
           type="submit"
-          className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="btn-primary absolute right-2.5 bottom-2.5"
         >
           Search
         </button>

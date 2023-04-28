@@ -1,5 +1,21 @@
 // cSpell Settings
 {
+    "files": [ 
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.md",
+        "**/*.json",
+        "**/*.yml",
+        "**/*.yaml",
+        "**/*.txt",
+        "**/*.mdx",
+        "**/*.mdx"
+    ],
     // Version of the setting file.  Always 0.2
     "version": "0.2",
     // language - current active spelling language
@@ -129,6 +145,7 @@
         "siguiente",
         "siguientes",
         "solicitud",
+        "tailwindcss",
         "También",
         "tener",
         "término",
@@ -141,7 +158,8 @@
         "útil",
         "utiliza",
         "utilizando",
-        "verifica"
+        "verifica",
+        "tailwindscss"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.

@@ -1,15 +1,21 @@
 import { useSelector } from "react-redux";
-import Image from "next/image";
-import { selectGifs } from "@/root/redux/reducers/gif-reducer/gifReducer";
 import { Gif } from "@/root/types/Gif.type";
+import { GifItem } from "../gif-item/GifItem";
+import { promotionPrice } from "@/root/constants/common.constant";
+import { selectGifs } from "@/root/redux/selectors/gif-selector/gif.selector";
 
 export const GifList = () => {
-  const gifList = useSelector(selectGifs);
+  const gifFoundList = useSelector(selectGifs);
 
   return (
-    <div>
-      {gifList.map((gif: Gif) => (
-        <Image key={gif.id} src={gif.url} alt={gif.title} />
+    <div className="grid grid-cols-3 gap-4 justify-center">
+      {gifFoundList.map((gif: Gif) => (
+        <GifItem
+          key={gif.id}
+          title={gif.title}
+          gifImageUrl={gif.url}
+          price={promotionPrice}
+        />
       ))}
     </div>
   );

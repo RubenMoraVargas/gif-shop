@@ -8,7 +8,7 @@ interface CartState {
   items: CartItem[];
 }
 
-const initialState: CartState = {
+export const initialState: CartState = {
   items: [],
 };
 
@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
     addItem: (state, action: PayloadAction<CartItem>) => {
       const item = action.payload;
 
-      const existingItem = state.items.find((i) => i.id === item.id);
+      const existingItem = state.items.find((i) => i.gif.id === item.gif.id);
 
       if (existingItem) {
         existingItem.quantity += 1;
@@ -37,7 +37,7 @@ export const cartSlice = createSlice({
     },
 
     removeItem: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.items = state.items.filter((item) => item.gif.id !== action.payload);
     } 
   },
    

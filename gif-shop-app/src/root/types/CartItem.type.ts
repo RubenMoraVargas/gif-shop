@@ -1,6 +1,7 @@
+import { Gif } from './Gif.type';
+
 export type CartItem = {
-    id: string;
-    name: string;
+    gif: Gif;
     price: number;
     quantity: number;
 };

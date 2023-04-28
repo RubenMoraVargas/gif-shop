@@ -6,8 +6,8 @@ import { cartReducer } from './reducers/cart-reducer/cartReducer';
 
 export const ApplicationStore = configureStore({
   reducer: {
-    gif: gifReducer,
-    cart: cartReducer,
+    gifStore: gifReducer,
+    cartStore: cartReducer,
   }, 
 });
 
