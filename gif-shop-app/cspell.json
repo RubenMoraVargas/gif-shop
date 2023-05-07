@@ -1,6 +1,6 @@
 // cSpell Settings
 {
-    "files": [ 
+    "files": [
         "**/*.js",
         "**/*.jsx",
         "**/*.ts",
@@ -146,9 +146,11 @@
         "siguientes",
         "solicitud",
         "tailwindcss",
+        "tailwindscss",
         "También",
         "tener",
         "término",
+        "testid",
         "tiempo",
         "tienes",
         "través",
@@ -158,8 +160,7 @@
         "útil",
         "utiliza",
         "utilizando",
-        "verifica",
-        "tailwindscss"
+        "verifica"
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
